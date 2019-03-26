@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+beofre-install:
+    - docker build -t psuedoname/docker-react -f Dockerfile.dev .
+    
+    script:
+        - docker run psuedoname/docker-react npm run test -- --coverage
