@@ -7,3 +7,4 @@ beofre-install:
     
     script:
         - docker run psuedoname/docker-react npm run test -- --coverage
+        
