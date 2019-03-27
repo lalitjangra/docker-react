@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 #/app/build <-- All the stuff inside container
 
-#Run phase
+#Run phase for nginx
 FROM nginx
 EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
