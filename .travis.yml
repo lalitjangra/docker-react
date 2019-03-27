@@ -7,4 +7,15 @@ beofre-install:
     
 script:
     - docker run psuedoname/docker-react npm run test -- --coverage
+    
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-south-1"
+    name: "docker-react"
+    env: "DockerReact-env"
+    bucket_name: "elasticbeanstalk-ap-south-1-612625938287"
+    bucket_path: "docker-react"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
         
